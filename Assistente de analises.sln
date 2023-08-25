@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp-test", "cpp-test\cpp-test.vcxproj", "{603C95D0-BF4C-40AD-922C-9F097C07EA9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{8932395D-A3C2-4111-8805-FB25414903A8}"
+	ProjectSection(SolutionItems) = preProject
+		texto_discord.txt = texto_discord.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Debug|x64.ActiveCfg = Debug|x64
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Debug|x64.Build.0 = Debug|x64
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Debug|x86.ActiveCfg = Debug|Win32
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Debug|x86.Build.0 = Debug|Win32
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Release|x64.ActiveCfg = Release|x64
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Release|x64.Build.0 = Release|x64
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Release|x86.ActiveCfg = Release|Win32
+		{603C95D0-BF4C-40AD-922C-9F097C07EA9F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95B8CB0D-B38B-4C20-8A44-A3BD843C4970}
+	EndGlobalSection
+EndGlobal

@@ -45,21 +45,21 @@ void assistente(string solicitante, string envolvido, int s_principal, int s_int
 
     string reincidencia_txt;
 
-    vector<int> sit_intrinseca_segundos = { 0,0,5,5,10,10,15,20,25,30};
-    vector<int> sit_intrinseca_pontos =   { 0,0,0,0,0,10,15,20,25,30,50};
+    vector<int> sit_intrinseca_segundos = {0,0,5,5,10,10,15,20,25,30};
+    vector<int> sit_intrinseca_pontos =   {0,0,0,0,0,10,15,20,25,30,50};
 
     vector<string> outras_punicoes = { "Drive Through","Qualy Ban","Stop and Go" };
 
     int punicao_segundos;
     int punicao_pontos;
 
-    for (int i = 0; i <= max_si; i++) {
+    for (int i = 1; i <= max_si; i++) {
         if (s_intrinseca == i) {
-            punicao_segundos = sit_intrinseca_segundos[i];
-            punicao_pontos = sit_intrinseca_pontos[i];
+            punicao_segundos = sit_intrinseca_segundos[i -1];
+            punicao_pontos = sit_intrinseca_pontos[i -1];
             if(reincidencia == 1){
-                punicao_segundos = sit_intrinseca_segundos[i] * 2;
-                punicao_pontos = sit_intrinseca_pontos[i] * 2;
+                punicao_segundos = sit_intrinseca_segundos[i -1] * 2;
+                punicao_pontos = sit_intrinseca_pontos[i -1] * 2;
             }
         }
     }
@@ -172,15 +172,11 @@ void assistente(string solicitante, string envolvido, int s_principal, int s_int
     }
 
     cout << "A punicao para este incidente e de +" << punicao_segundos << "segundos, -" << punicao_pontos << " pontos na tabela." << endl;
-    cout << "n_princip: " << n_princip << " | n_intrinsec: " << n_intrinsec << endl;
-    cout << "\n";
-
-    system("pause > nul");
 
     if ((n_princip != -1) && (n_intrinsec != -1)) {
 
-        output_txt << if_need_endl << "> Incidente entre " << solicitante << " e " << envolvido << "\n> Resumo: " << resumos_principais[n_princip] << resumos_intrinsecos[n_intrinsec] << "\n> \n> Momento do incidente: " << etapa << "º Etapa (" << nomes_etapas << ") - Minuto: " << momento_incidente <<
-        "\n> \n> Resultado: Punicao para " << envolvido << ": Foi reincidencia? " << reincidencia_txt << ". " << "Situacao Principal: ("
+        output_txt << if_need_endl << "> Incidente entre **" << solicitante << "** e **" << envolvido << "**\n> Resumo: " << resumos_principais[n_princip] << resumos_intrinsecos[n_intrinsec] << "\n> \n> Momento do incidente: **" << etapa << "º Etapa (" << nomes_etapas << ")** - Minuto: " << momento_incidente <<
+        "\n> \n> **Resultado:** Punicao para " << envolvido << ": Foi reincidencia? " << reincidencia_txt << ". " << "Situacao Principal: ("
         << s_principal << ") - Situacao Intrinseca " << "(" << s_intrinseca << ") " << " (+" << punicao_segundos <<
         ") segundos adicionados ao fim da prova (-" << punicao_pontos << ") pontos na tabela de pontuacao";
 
@@ -197,7 +193,7 @@ void assistente(string solicitante, string envolvido, int s_principal, int s_int
 }
 
 bool validar_solicit_regex(string& solicitante) {
-    regex solicit_regex("^[A-Za-z]+\\s[A-Za-z]+$");
+    regex solicit_regex("^([A-Za-z]+)\\s([A-Za-z]+)(\\s[A-Za-z]+)?$");
     return regex_match(solicitante, solicit_regex);
 }
 
@@ -373,7 +369,6 @@ int main() {
     }
 
     cout << "\ns_principal: " << s_principal << "\ns_intrinseca: " << s_intrinseca << endl;
-    system("pause > nul");
 
     assistente(solicitante, envolvido, s_principal, s_intrinseca, max_si, etapa, momento_incidente, reincidencia, nomes_etapas[etapa +1]);
 }
